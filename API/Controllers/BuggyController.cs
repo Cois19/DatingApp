@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Data;
 using API.Entities;
 using Microsoft.AspNetCore.Authorization;
@@ -17,12 +14,12 @@ namespace API.Controllers
             _context = context;
         }
 
-        // [Authorize]om
-        // [HttpGet("auth")]
-        // public ActionResult<string> GetSecret()
-        // {
-        //     return "secret text";
-        // }
+        [Authorize]
+        [HttpGet("auth")]
+        public ActionResult<string> GetSecret()
+        {
+            return "secret text";
+        }
 
         [HttpGet("not-found")]
         public ActionResult<AppUser> GetNotFound()
